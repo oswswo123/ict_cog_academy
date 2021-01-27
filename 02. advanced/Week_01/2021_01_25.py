@@ -52,7 +52,7 @@ def y():
 a = y()
 print(type(a))
 
-#%%
+#%% generator
 def z():
     yield 11
     yield 2
@@ -68,6 +68,8 @@ print(type(b))
 print(next(b))
 print(next(b))
 print(next(b))
+
+# 이 외에는 comprehension을 tuple로 만들면 generator가 된다
 
 #%% map
 '''
