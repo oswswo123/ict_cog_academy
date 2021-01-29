@@ -11,7 +11,12 @@ def sun(x):
     ex) class A:
             pass
         callable(A) → True (A() 사용가능)
-        
+    
+    python에서 call을 사용할 수 있는 객체
+    1. 함수(function)
+    2. 클래스(class)
+    3. '__call__()'이 있는 인스턴스(instance)
+    
     클래스를 인스턴스화 할 때 '__init__()'가 실행된다
     인스턴스화 된 클래스에 ()를 붙이면 '__call__()'이 실행된다
 '''
@@ -46,6 +51,13 @@ def sun(t:int) -> int:
     
     closure : First class function의 개념을 이용하여
             scope에 묶인 변수를 바인딩하기 위한 기술
+            
+            ex) def x(m):
+                    def y(n):
+                        return m+n
+                    return y
+                
+                이 경우 x(2)(5)는 7
 
     LEGB
     - L : local의 약자로 함수 안을 의미

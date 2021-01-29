@@ -79,6 +79,8 @@ c = C()
               - 완전히 바꾸거나
               - 일부만 바꾸거나
               없는 것 추가시킬 수 있다.
+    - 파이썬의 상속은 복사가 아니라 위임(Delegation)이므로
+      부모의 값이 변경되면 자식도 같이 변경될 위험이 있다.
 '''
 class B:    # 여기에 D(ojbect)가 생략되어 있음
             # 기본적으로 class는 object class를 상속받음
@@ -143,4 +145,21 @@ class D(B, C):
     
     이 2개를 다른 함수로 간주하는 것이 method overloading 지원
     같은 함수로 간주하는 것을 method overloading 지원 안함
+    
+    overloading은 보통 generic function의 역할을 한
+    
+    python의 모든 연산자는 method와 연결되어 있고
+    python의 모든 연산자는 function으로 대체 가능하다
+     → method와의 연결을 바꿈으로써 연산자의 기능을 바꿀 수 있다(연산자 오버로딩)
 '''
+# 연산자 오버로딩
+class X:
+    def __add__(self, a):
+        print('연산자의 기능이 바뀌었습니다')
+        return 1
+
+x = X()
+
+# + 연산자가 print로 바뀜(연산자의 기능이 재정의됨)
+b = x+55
+print(b)
